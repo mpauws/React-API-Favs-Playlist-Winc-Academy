@@ -1,0 +1,57 @@
+/* Minimale CSS Edits voor betere weergave ;) */
+
+body {
+   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+   background-color: rgb(211, 243, 232);
+}
+
+h1 {
+   padding-bottom: 30px;
+}
+
+h2 {
+   padding-bottom: 0px;
+}
+
+input[type="text"] {
+   width: 200px;
+   height: 30px;
+}
+
+.table-width {
+   width: 100%;
+}
+
+.songform-wrapper {
+   padding-bottom: 30px;
+}
+
+.songform-label {
+   display: block;
+   height: 30px;
+   width: 200px;
+}
+
+.add-button {
+   padding: 10px;
+   width: 200px;
+}
+
+.songform-inputfield {
+   padding: 5px;
+   width: 200px;
+}
+
+.table-row {
+   width: 100vw;
+   padding: 10px;
+}
+
+.table-data,
+.song-row-item,
+th.song-row-item,
+td.song-row-item {
+   border: 1px black solid;
+   width: 20vw;
+   text-align: center;
+}
