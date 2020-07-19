@@ -1,58 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SongForm from "./SongForm";
 import SongListItem from "./SongListItem";
 
 function SongOverview() {
-   const allSongsArray = [
-      {
-         id: "1",
-         songtitle: "Snelle Planga",
-         artist: "Rapper Donnie",
-         genre: "Hip Hop",
-         rating: "5 stars",
-      },
-      {
-         id: "2",
-         songtitle: "Anton aus Tirol",
-         artist: "Anton feat. DJ Ötzi",
-         genre: "Apres Ski",
-         rating: "2 stars",
-      },
-      {
-         id: "3",
-         songtitle: "White Limo",
-         artist: "Foo Fighters",
-         genre: "Hard Rock",
-         rating: "5 stars",
-      },
-      {
-         id: "4",
-         songtitle: "Jij Krijgt Die Lach Niet Van Mijn Gezicht",
-         artist: "John de Bever",
-         genre: "Apres Ski",
-         rating: "4 stars",
-      },
-   ];
+   const apiUrl = "https://winc-lil-playlist.firebaseio.com/songinfo.json";
 
-   const [songs, setSongs] = useState(allSongsArray);
+   const [songs, setSongs] = useState([]);
    const [sorting, setSorting] = useState("");
-   // console.log("Songs Display", songs);
 
-   const addSongToList = (item) => {
-      item.id = songs.length + 1; // zodat id steeds een uniek nummer krijgt
-      setSongs([...songs, item]); // merge arrays
+   const getData = async () => {
+      try {
+         let response = await fetch(apiUrl, {
+            method: "GET",
+         });
+         const result = await response.json();
+
+         let song = Object.keys(result).map((key) => ({
+            id: key,
+            artist: result[key].artist,
+            genre: result[key].genre,
+            rating: result[key].rating,
+            songtitle: result[key].songtitle,
+         }));
+
+         setSongs(song);
+      } catch (error) {
+         console.log(error);
+      }
    };
 
-   const deleteSongFunctie = () => {
-      songs.map((data) => {
-         return data.id;
-      });
+   useEffect((event) => {
+      getData(event);
+   }, []);
+
+   const removeSongFromApi = async (hashId) => {
+      try {
+         const apiUrl = `https://winc-lil-playlist.firebaseio.com/songinfo/${hashId}.json`;
+         let response = await fetch(apiUrl, { method: "DELETE" });
+         const result = await response.json();
+         return result;
+      } catch (error) {
+         console.log(error);
+      }
    };
 
-   const deleteSongListItem = (event) => {
-      console.log("ik werk!");
-      // setSongs(songs.filter((item) => item !== songListItemId));
-      deleteSongFunctie();
+   const deleteSongListItem = (id) => {
+      setSongs(songs.filter((song) => song.id !== id));
+      removeSongFromApi(id);
    };
 
    const onChangeSort = (event) => {
@@ -77,8 +71,8 @@ function SongOverview() {
    return (
       <div>
          <h1>Winc Lil' Playlist</h1>
-         <SongForm addSongToList={addSongToList} />
-         {/* {console.log("This is allSongsArray", allSongsArray)} */}
+         <SongForm />
+
          <h2>Overview Favorite Songs</h2>
 
          <label>Sort Options</label>
@@ -92,7 +86,6 @@ function SongOverview() {
          <table>
             <thead className="song-header">
                <tr>
-                  <th className="song-row-item">ID</th>
                   <th className="song-row-item">Song</th>
                   <th className="song-row-item">Artist</th>
                   <th className="song-row-item">Genre</th>
@@ -119,3 +112,34 @@ function SongOverview() {
 }
 
 export default SongOverview;
+
+// const allSongsArray = [
+//    {
+//       id: "1",
+//       songtitle: "Snelle Planga",
+//       artist: "Rapper Donnie",
+//       genre: "Hip Hop",
+//       rating: "5 stars",
+//    },
+//    {
+//       id: "2",
+//       songtitle: "Anton aus Tirol",
+//       artist: "Anton feat. DJ Ötzi",
+//       genre: "Apres Ski",
+//       rating: "2 stars",
+//    },
+//    {
+//       id: "3",
+//       songtitle: "White Limo",
+//       artist: "Foo Fighters",
+//       genre: "Hard Rock",
+//       rating: "5 stars",
+//    },
+//    {
+//       id: "4",
+//       songtitle: "Jij Krijgt Die Lach Niet Van Mijn Gezicht",
+//       artist: "John de Bever",
+//       genre: "Apres Ski",
+//       rating: "4 stars",
+//    },
+// ];

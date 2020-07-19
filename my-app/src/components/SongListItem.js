@@ -5,7 +5,6 @@ function SongListItem(props) {
       <table>
          <tbody>
             <tr className="song-header" key={props.id}>
-               <td className="song-row-item">{props.id}</td>
                <td className="song-row-item">{props.songtitle}</td>
                <td className="song-row-item">{props.artist}</td>
                <td className="song-row-item">{props.genre}</td>
