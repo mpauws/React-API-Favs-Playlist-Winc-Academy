@@ -3,6 +3,7 @@
 body {
    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
    background-color: rgb(211, 243, 232);
+   padding: 30px;
 }
 
 h1 {
@@ -45,6 +46,7 @@ input[type="text"] {
 .table-row {
    width: 100vw;
    padding: 10px;
+   overflow-wrap: break-word;
 }
 
 .table-data,
@@ -52,6 +54,17 @@ input[type="text"] {
 th.song-row-item,
 td.song-row-item {
    border: 1px black solid;
-   width: 20vw;
+   width: 17vw;
    text-align: center;
+   overflow-wrap: break-word;
+   font-size: 11px;
+}
+
+.navbar-item {
+   padding-right: 30px;
+   text-decoration: none;
+}
+
+.active {
+   font-weight: bold;
 }
