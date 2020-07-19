@@ -12,7 +12,6 @@ function App() {
             <Route exact path="/" component={SongOverview} />
             <Route path="/About" component={About} />
          </Switch>
-         {/* <SongOverview /> */}
       </div>
    );
 }
