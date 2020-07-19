@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SongForm from "./SongForm";
-import SongList from "./SongList";
 import SongListItem from "./SongListItem";
 
 function SongOverview() {
@@ -33,8 +32,6 @@ function SongOverview() {
          genre: "Apres Ski",
          rating: "4 stars",
       },
-
-      // Default voorbeeld voor in de lijst
    ];
 
    const [songs, setSongs] = useState(allSongsArray);
@@ -46,11 +43,11 @@ function SongOverview() {
       setSongs([...songs, item]); // merge arrays
    };
 
-
-   const deleteSongFunctie = () => {songs.map (data => {
-      return data.id;
-   })}
-   
+   const deleteSongFunctie = () => {
+      songs.map((data) => {
+         return data.id;
+      });
+   };
 
    const deleteSongListItem = (event) => {
       console.log("ik werk!");
