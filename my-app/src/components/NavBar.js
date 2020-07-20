@@ -4,12 +4,12 @@ import "../index.css";
 
 function NavBar() {
    return (
-      <div>
+      <div className="nav-bar">
          <NavLink to="/" exact={true} className="navbar-item">
             Song Overview
          </NavLink>
          <NavLink to="/About" className="navbar-item">
-            About us
+            About Winc Lil' Playlist
          </NavLink>
       </div>
    );

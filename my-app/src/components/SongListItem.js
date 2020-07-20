@@ -14,7 +14,6 @@ function SongListItem(props) {
                      Delete
                   </button>
                </td>
-               {/* Delete knop werkt helaas nog niet */}
             </tr>
          </tbody>
       </table>

@@ -3,15 +3,6 @@ import React, { useState } from "react";
 function SongForm(props) {
    const apiUrl = "https://winc-lil-playlist.firebaseio.com/songinfo.json";
 
-   // const formInputFields = {
-   //    id: "",
-   //    songtitle: "",
-   //    artist: "",
-   //    genre: "",
-   //    rating: "",
-   // };
-   // const [song, setSong] = useState("");
-
    const [songtitle, setSongTitle] = useState("");
    const [artist, setArtist] = useState("");
    const [genre, setGenre] = useState("");
@@ -53,25 +44,8 @@ function SongForm(props) {
       setRating(event.target.value);
    };
 
-   /*    // onChange: "when typed in, passes its current value to the handleChange function"
-   function onHandleChange(event) {
-      const value = event.target.value;
-      setSong({
-         ...song,
-         [event.target.name]: value,
-      });
-   }
- */
-   // function onHandleSubmit(event) {
-   //    event.preventDefault();
-   //    props.addSongToList(song); // deze moet erbij!
-   //    setSong(formInputFields);
-   // }
-
    return (
-      // Let op: onSubmit hoeft alleen bij form en niet bij de individuele formInputFields
-      // To Do: Styling: breaks weghalen en netter maken met CSS
-      <div>
+      <div className="song-form">
          <h2>Add your favorite songs:</h2>
          <form className="songform-wrapper" onSubmit={handleSubmit}>
             <label className="songform-label">

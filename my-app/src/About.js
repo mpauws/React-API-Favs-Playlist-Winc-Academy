@@ -3,17 +3,24 @@ import React from "react";
 function About() {
    return (
       <div className="about-page">
-         <h1>About Me</h1>
+         <h1>About Winc Lil' Playlist</h1>
          <p>
-            Per id choro docendi, pro zril civibus id, no tractatos efficiendi efficiantur sit. No virtute persecuti
-            sea, dicta dolorum fabellas ad per. Te debet dolor mei. Cu mel eius everti urbanitas, nonumes efficiendi mel
-            ea. Id nam clita option consequat, vim saperet debitis accusam ei. Et malis erroribus eum. Has nostrud
-            feugiat cu, ullum facilisi ea per, quot utamur no his. Meis illum efficiendi at duo. Amet munere populo cu
-            per, usu modo facilisi te. Dicant omittam aliquando mea at, suas legendos molestiae et mea. Graeco numquam
-            usu in, mel no quem partem iisque. Ne sint pertinax nec, mel ut saepe aliquam pertinacia. Porro offendit
-            eloquentiam nec in. Prompta qualisque mediocritatem per id. Ius democritum repudiandae eu. Duo nibh augue
-            evertitur ut. Usu at ipsum doctus partiendo, et alia ignota quaeque mel, cum at soleat ignota.
+            What started out as an assignment for the intensive 6 week Winc Front-end Development course has turned out
+            to be cultural phenomenon that rivals the popularity of Shazam. With a spectacular total of 2 users it has
+            been rated as the best new React creation by Wired Magazine:
          </p>
+         <p className="quote">
+            <em>
+               "A fabulous app for adding your favourite songs to a list you can whip out at those boring parties where
+               the DJ clearly has no idea what the crowd wants."
+            </em>
+         </p>
+
+         <p>Party on, Wayne!</p>
+         <p>Party on, Garth!</p>
+         <div className="image-wrapper">
+            <img alt="party on" src={require("./media/headbanging.gif")} />
+         </div>
       </div>
    );
 }
