@@ -7,7 +7,7 @@ function SongOverview() {
 
    const [songs, setSongs] = useState("");
    const [sorting, setSorting] = useState("");
-   // const [hipHopFilter, setHipHopFilter] = useState("");
+   /* const [hipHopFilter, setHipHopFilter] = useState(""); */
 
    const getData = async () => {
       try {
@@ -61,46 +61,41 @@ function SongOverview() {
    const onChangeSort = (event) => {
       console.log("Geselecteerde sortering", event.target.value);
       setSorting(event.target.value);
+      if (sorting === "songtitle A-Z") {
+         songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
+      } else if (sorting === "songtitle Z-A") {
+         songs.sort((a, b) => (a.songtitle > b.songtitle ? 1 : -1));
+      } else if (sorting === "artist A-Z") {
+         songs.sort((a, b) => (a.artist < b.artist ? 1 : -1));
+      } else if (sorting === "artist Z-A") {
+         songs.sort((a, b) => (a.artist > b.artist ? 1 : -1));
+      } else if (sorting === "1star-5star") {
+         songs.sort((a, b) => (a.rating < b.rating ? 1 : -1));
+      } else if (sorting === "5star-1star") {
+         songs.sort((a, b) => (a.rating > b.rating ? 1 : -1));
+      }
+      // To do: zorgen dat input altijd een hoofdletter krijgt zodat het sorteren goed gaat
    };
-
-   // To do: zorgen dat input altijd een hoofdletter krijgt zodat het sorteren goed gaat
-
-   if (sorting === "songtitle A-Z") {
-      songs.sort((a, b) => (a.songtitle > b.songtitle ? 1 : -1));
-   } else if (sorting === "songtitle Z-A") {
-      songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
-   } else if (sorting === "artist A-Z") {
-      songs.sort((a, b) => (a.artist > b.artist ? 1 : -1));
-   } else if (sorting === "artist Z-A") {
-      songs.sort((a, b) => (a.artist < b.artist ? 1 : -1));
-   } else if (sorting === "1star-5star") {
-      songs.sort((a, b) => (a.rating > b.rating ? 1 : -1));
-   } else if (sorting === "5star-1star") {
-      songs.sort((a, b) => (a.rating < b.rating ? 1 : -1));
-   }
 
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
    // Filter Functionality
    // [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 
-   /*    function filterHipHop() {
-      hipHopFilter.filter((song) => {
-         return song.genre === "Hip Hop";
-      });
-   }
+   /*    const filterHipHop = () => {
+      setSongs(hipHopFilter.filter((song) => song.genre === "Hip Hop"));
+   }; */
 
-   const onFilterGenreHipHop = (event) => {
+   /*    const onFilterGenreHipHop = (event) => {
       console.log("Geklikt op:", event.target.value);
       setHipHopFilter(event.target.value);
       filterHipHop();
-   };
- */
+   }; */
 
    return (
       <div>
          <h1>Winc Lil' Playlist</h1>
          <SongForm />
-         {/*          <button className="filter-button-hiphop" value="filter-button-hiphop" onClick={onFilterGenreHipHop}>
+         {/* <button className="filter-button-hiphop" value="filter-button-hiphop" onClick={onFilterGenreHipHop}>
             Hip Hop
          </button> */}
          <div className="table-wrapper">
@@ -156,6 +151,7 @@ function SongOverview() {
                     />
                  ))
                : null}
+            {/* Indien null: "Voeg iets toe!" */}
          </div>
       </div>
    );

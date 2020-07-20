@@ -13,6 +13,7 @@ function SongListItem(props) {
                   <button className="delete-buttons" onClick={(event) => props.deleteSongListItem(props.id)}>
                      Delete
                   </button>
+                  {/* props.deleteSongListItem moet in arrow functie zodat het niet automatisch geactiveerd wordt... */}
                </td>
             </tr>
          </tbody>
