@@ -5,7 +5,6 @@ function SongListItem(props) {
       <table>
          <tbody>
             <tr className="song-header" key={props.id}>
-               <td className="song-row-item">{props.id}</td>
                <td className="song-row-item">{props.songtitle}</td>
                <td className="song-row-item">{props.artist}</td>
                <td className="song-row-item">{props.genre}</td>
@@ -14,8 +13,8 @@ function SongListItem(props) {
                   <button className="delete-buttons" onClick={(event) => props.deleteSongListItem(props.id)}>
                      Delete
                   </button>
+                  {/* props.deleteSongListItem moet in arrow functie zodat het niet automatisch geactiveerd wordt... */}
                </td>
-               {/* Delete knop werkt helaas nog niet */}
             </tr>
          </tbody>
       </table>
