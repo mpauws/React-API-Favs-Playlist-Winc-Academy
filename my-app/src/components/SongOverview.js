@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SongForm from "./SongForm";
+import SongSortSelect from "./SongSortSelect";
 import SongListItem from "./SongListItem";
 
 function SongOverview() {
@@ -56,12 +57,11 @@ function SongOverview() {
    };
 
    const onChangeSort = (event) => {
-      console.log("User changed the value", event.target.value);
+      // console.log("User changed the value", event.target.value);
       setSorting(event.target.value);
    };
 
    if (sorting === "A-Z") {
-      // console.log("songs", songs);
       songs.sort((a, b) => (a.songtitle > b.songtitle ? 1 : -1));
    }
    if (sorting === "Z-A") {
@@ -76,23 +76,14 @@ function SongOverview() {
 
    return (
       <div>
-         <h1>Winc Lil' Playlist</h1>
+         <h1 className="page-title">react playlist</h1>
          <SongForm addSongToList={addSongToList} />
-         {/* {console.log("This is allSongsArray", allSongsArray)} */}
-         <h2>Overview Favorite Songs</h2>
 
-         <label>Sort Options</label>
-         <select onChange={onChangeSort}>
-            <option value="sorting">select</option>
-            <option value="A-Z">A-Z</option>
-            <option value="Z-A">Z-A</option>
-            <option value="1star-5star">Rating 1-5</option>
-            <option value="5star-1star">Rating 5-1</option>
-         </select>
+         <h2>Overview Favorite Songs</h2>
+         <SongSortSelect onChangeSort={onChangeSort} />
          <table>
             <thead className="song-header">
                <tr>
-                  <th className="song-row-item">ID</th>
                   <th className="song-row-item">Song</th>
                   <th className="song-row-item">Artist</th>
                   <th className="song-row-item">Genre</th>
@@ -100,20 +91,22 @@ function SongOverview() {
                   <th className="song-row-item">Delete</th>
                </tr>
             </thead>
+            <tbody>
+               {songs
+                  ? songs.map((song) => (
+                       <SongListItem
+                          key={song.id}
+                          id={song.id}
+                          songtitle={song.songtitle}
+                          artist={song.artist}
+                          genre={song.genre}
+                          rating={song.rating}
+                          deleteSongListItem={deleteSongListItem}
+                       />
+                    ))
+                  : null}
+            </tbody>
          </table>
-         {songs
-            ? songs.map((song) => (
-                 <SongListItem
-                    key={song.id}
-                    id={song.id}
-                    songtitle={song.songtitle}
-                    artist={song.artist}
-                    genre={song.genre}
-                    rating={song.rating}
-                    deleteSongListItem={deleteSongListItem}
-                 />
-              ))
-            : null}
       </div>
    );
 }
