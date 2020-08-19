@@ -7,8 +7,8 @@ function SongListItem(props) {
          <td className="song-row-item">{props.artist}</td>
          <td className="song-row-item">{props.genre}</td>
          <td className="song-row-item">{props.rating}</td>
-         <td key={props.id} className="song-row-item">
-            <button className="delete-buttons" onClick={(event) => props.deleteSongListItem(props.id)}>
+         <td key={props.id} className="song-cell-delete">
+            <button key={props.id} className="delete-buttons" onClick={(event) => props.deleteSongListItem(props.id)}>
                Delete
             </button>
          </td>

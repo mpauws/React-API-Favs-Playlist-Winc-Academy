@@ -3,7 +3,6 @@ import React from "react";
 function About() {
    return (
       <div className="about-page">
-         <h1>About Me</h1>
          <p>
             Per id choro docendi, pro zril civibus id, no tractatos efficiendi efficiantur sit. No virtute persecuti
             sea, dicta dolorum fabellas ad per. Te debet dolor mei. Cu mel eius everti urbanitas, nonumes efficiendi mel

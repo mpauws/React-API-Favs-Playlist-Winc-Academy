@@ -37,11 +37,10 @@ function SongOverview() {
 
    const [songs, setSongs] = useState(allSongsArray);
    const [sorting, setSorting] = useState("");
-   // console.log("Songs Display", songs);
-
+   
    const addSongToList = (item) => {
-      item.id = songs.length + 1; // zodat id steeds een uniek nummer krijgt
-      setSongs([...songs, item]); // merge arrays
+      item.id = songs.length + 1;
+      setSongs([...songs, item]);
    };
 
    const deleteSongFunctie = () => {
@@ -50,14 +49,14 @@ function SongOverview() {
       });
    };
 
-   const deleteSongListItem = (event) => {
-      console.log("ik werk!");
-      // setSongs(songs.filter((item) => item !== songListItemId));
-      deleteSongFunctie();
+   const deleteSongListItem = (song) => {
+      // console.log(event.target);
+      setSongs(songs.filter((remainingSongs) => remainingSongs !== song));
+      deleteSongFunctie(song.key);
    };
 
    const onChangeSort = (event) => {
-      // console.log("User changed the value", event.target.value);
+      console.log("User changed the value", event.target.value);
       setSorting(event.target.value);
    };
 
@@ -76,7 +75,6 @@ function SongOverview() {
 
    return (
       <div>
-         <h1 className="page-title">react playlist</h1>
          <SongForm addSongToList={addSongToList} />
 
          <h2>Overview Favorite Songs</h2>
@@ -88,7 +86,7 @@ function SongOverview() {
                   <th className="song-row-item">Artist</th>
                   <th className="song-row-item">Genre</th>
                   <th className="song-row-item">Rating</th>
-                  <th className="song-row-item">Delete</th>
+                  <th className="song-cell-delete">Delete</th>
                </tr>
             </thead>
             <tbody>

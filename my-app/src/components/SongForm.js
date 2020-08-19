@@ -21,7 +21,7 @@ function SongForm(props) {
 
    function onHandleSubmit(event) {
       event.preventDefault();
-      props.addSongToList(song); // deze moet erbij!
+      props.addSongToList(song);
       setSong(formInputFields);
    }
 
@@ -47,7 +47,7 @@ function SongForm(props) {
                </label>
                <br />
                <select className="songform-label" name="genre" value={song.genre} onChange={onHandleChange}>
-                  <option value="">-- Please select a genre</option>
+                  <option value="">Genre</option>
                   <option value="Pop Music">Pop Music</option>
                   <option value="Hip Hop">Hip Hop</option>
                   <option value="Hard Rock">Hard Rock</option>
@@ -60,7 +60,7 @@ function SongForm(props) {
                </select>
                <br />
                <select className="songform-label" name="rating" value={song.rating} onChange={onHandleChange}>
-                  <option value="">-- Please rate your song</option>
+                  <option value="">Rate</option>
                   <option value="1 star">1 star</option>
                   <option value="2 stars">2 stars</option>
                   <option value="3 stars">3 stars</option>

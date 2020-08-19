@@ -8,10 +8,12 @@ function App() {
    return (
       <div>
          <NavBar />
+         <h1 className="page-title">react playlist</h1>
          <Switch>
             <Route exact path="/" component={SongOverview} />
             <Route path="/About" component={About} />
          </Switch>
+         
       </div>
    );
 }

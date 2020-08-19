@@ -3,9 +3,9 @@ import React from "react";
 function SongSortSelect(props) {
    return (
       <div className="sort-options">
-         <label>Sort Options</label>
-         <select onChange={props.onChangeSort}>
-            <option value="sorting">select</option>
+         <label className="sort-options-label">Sort Options</label>
+         <select className="select-menu" onChange={props.onChangeSort}>
+            <option value="sorting">Select</option>
             <option value="A-Z">A-Z</option>
             <option value="Z-A">Z-A</option>
             <option value="1star-5star">Rating 1-5</option>
