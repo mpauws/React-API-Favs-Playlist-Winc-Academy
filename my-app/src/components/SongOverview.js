@@ -28,19 +28,55 @@ function SongOverview() {
       },
       {
          id: "4",
+         songtitle: "This Is How We Do It",
+         artist: "Montell Jordan",
+         genre: "Hip Hop",
+         rating: "3 stars",
+      },
+      {
+         id: "5",
          songtitle: "Jij Krijgt Die Lach Niet Van Mijn Gezicht",
          artist: "John de Bever",
          genre: "Apres Ski",
          rating: "4 stars",
       },
+      {
+         id: "6",
+         songtitle: "Shenkie",
+         artist: "De Jeugd Van Tegenwoordig",
+         genre: "Hip Hop",
+         rating: "2 stars",
+      },
+      {
+         id: "7",
+         songtitle: "Spanish Castle Magic",
+         artist: "Jimi Hendrix",
+         genre: "Hard Rock",
+         rating: "5 stars",
+      },
+      {
+         id: "8",
+         songtitle: "Overkill",
+         artist: "Motörhead",
+         genre: "Heavy Metal",
+         rating: "5 stars",
+      },
    ];
 
    const [songs, setSongs] = useState(allSongsArray);
    const [sorting, setSorting] = useState("");
-   
+
    const addSongToList = (item) => {
       item.id = songs.length + 1;
-      setSongs([...songs, item]);
+      if (item.songtitle === "") {
+         item.songtitle = "Unknown Songtitle";
+         setSongs([...songs, item]);
+      } else if (item.artist === "") {
+         item.artist = "Unknown Artist";
+         setSongs([...songs, item]);
+      } else {
+         setSongs([...songs, item]);
+      }
    };
 
    const deleteSongFunctie = () => {
@@ -60,6 +96,16 @@ function SongOverview() {
       setSorting(event.target.value);
    };
 
+   const onChangeSort2 = (sortMethod) => {
+      setSorting(sortMethod);
+   };
+
+   if (sorting === "songtitle-Z-A") {
+      songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
+   }
+   if (sorting === "songtitle-A-Z") {
+      songs.sort((a, b) => (a.songtitle > b.songtitle ? 1 : -1));
+   }
    if (sorting === "A-Z") {
       songs.sort((a, b) => (a.songtitle > b.songtitle ? 1 : -1));
    }
@@ -82,10 +128,18 @@ function SongOverview() {
          <table>
             <thead className="song-header">
                <tr>
-                  <th className="song-row-item">Song</th>
-                  <th className="song-row-item">Artist</th>
-                  <th className="song-row-item">Genre</th>
-                  <th className="song-row-item">Rating</th>
+                  <th className="song-header-cell">
+                     Song
+                     <div className="sort-song" onClick={() => onChangeSort2("songtitle-Z-A")}>
+                        Z-A
+                     </div>
+                     <div className="sort-song" onClick={() => onChangeSort2("songtitle-A-Z")}>
+                        A-Z
+                     </div>
+                  </th>
+                  <th className="song-header-cell">Artist</th>
+                  <th className="song-header-cell">Genre</th>
+                  <th className="song-header-cell">Rating</th>
                   <th className="song-cell-delete">Delete</th>
                </tr>
             </thead>

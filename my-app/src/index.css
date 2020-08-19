@@ -52,13 +52,13 @@ h1 {
 
 h2 {
    font-family: "Mr Dafoe", cursive;
+   font-size: 2.5em;
    text-align: center;
    color: #eb219b;
    font-weight: 300;
-   -webkit-text-fill-color: rgba(253, 90, 250, 1);
-   text-shadow: 0 1px 0 #ffbaf2;
-   filter: drop-shadow(3px 3px 1px #441f62);
-   -webkit-filter: drop-shadow(3px 3px 1px #441f62);
+   -webkit-text-fill-color: rgb(255, 157, 253);
+   filter: drop-shadow(10px 10px 10px #441f62);
+   -webkit-filter: drop-shadow(1px 2px 0 #441f62);
    transform: skew(-5deg, -5deg);
    -webkit-transform: skew(-5deg, -5deg);
    font-weight: normal;
@@ -123,6 +123,7 @@ p {
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .songform-container {
+   margin-top: 10px;
    display: flex;
    justify-content: center;
    justify-items: center;
@@ -178,6 +179,7 @@ p {
 
 table {
    width: 100%;
+   margin-bottom: 50px;
 }
 
 .table-row {
@@ -212,6 +214,13 @@ th {
    text-transform: uppercase;
 }
 
+.sort-song {
+   float: right;
+   padding: 5px;
+   border: 1px solid white;
+   cursor: pointer;
+}
+
 table {
    border-collapse: collapse;
    border: 1px solid rgba(255, 255, 255, 0.3);
@@ -227,6 +236,20 @@ table {
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .about-page {
+   margin: 0 auto;
+   width: 75%;
+   top: -200px;
+   bottom: -400px;
+   left: -400px;
+   right: -400px;
+   position: absolute;
+   background-image: linear-gradient(#ff0092 1px, transparent 1px), linear-gradient(90deg, #ff0092 1px, transparent 1px);
+   background-size: 3% 3%, 3% 3%;
+   background-position: 0 0, 0 0;
+   transform: perspective(400px) rotateX(85deg);
+}
+
+.about-page-text {
    margin: 0 auto;
    display: flex;
    justify-content: center;
