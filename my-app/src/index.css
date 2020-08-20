@@ -239,7 +239,20 @@ table {
 img.sort-icon {
    cursor: pointer;
    float: right;
-   width: 20px;
+   width: 15px;
+}
+
+.delete-button {
+   padding: 5px;
+   width: 75px;
+   color: white;
+   background-color: rgb(230, 104, 165);
+   cursor: pointer;
+   transition: 0.2s;
+}
+
+.delete-button:hover {
+   background-color: rgb(221, 83, 150);
 }
 
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
@@ -250,14 +263,15 @@ img.sort-icon {
    margin: 0 auto;
    width: 75%;
    top: -200px;
-   bottom: -400px;
+   bottom: -600px;
    left: -400px;
    right: -400px;
    position: absolute;
    background-image: linear-gradient(#ff0092 1px, transparent 1px), linear-gradient(90deg, #ff0092 1px, transparent 1px);
-   background-size: 3% 3%, 3% 3%;
+   background-size: 2% 2%, 2% 2%;
    background-position: 0 0, 0 0;
    transform: perspective(400px) rotateX(85deg);
+   z-index: -1;
 }
 
 .about-page-text {

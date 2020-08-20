@@ -6,13 +6,17 @@ function SongListItem(props) {
 
       if (rating === "1 star") {
          starRating = "⭐️";
-      } else if (rating === "2 stars") {
+      }
+      if (rating === "2 stars") {
          starRating = "⭐️⭐️";
-      } else if (rating === "3 stars") {
+      }
+      if (rating === "3 stars") {
          starRating = "⭐️⭐️⭐️";
-      } else if (rating === "4 stars") {
+      }
+      if (rating === "4 stars") {
          starRating = "⭐️⭐️⭐️⭐️";
-      } else {
+      }
+      if (rating === "5 stars") {
          starRating = "⭐️⭐️⭐️⭐️⭐️";
       }
       return starRating;
@@ -25,11 +29,10 @@ function SongListItem(props) {
          <td className="song-row-item">{props.genre}</td>
          <td className="song-row-item">{convertRatingToStars(props.rating)}</td>
          <td key={props.id} className="song-cell-delete">
-            <button key={props.id} className="delete-buttons" onClick={(event) => props.deleteSongListItem(props.id)}>
+            <button id={props.id} className="delete-button" onClick={props.handleRemoveItem}>
                Delete
             </button>
          </td>
-         {/* Delete knop werkt helaas nog niet */}
       </tr>
    );
 }

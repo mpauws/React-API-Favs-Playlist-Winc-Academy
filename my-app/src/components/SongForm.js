@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SongForm(props) {
+function SongForm({ addSongToList }) {
    const formInputFields = {
       id: "",
       songtitle: "",
@@ -10,7 +10,6 @@ function SongForm(props) {
    };
    const [song, setSong] = useState(formInputFields);
 
-   // onChange: "when typed in, passes its current value to the handleChange function"
    function onHandleChange(event) {
       const value = event.target.value;
       setSong({
@@ -21,17 +20,28 @@ function SongForm(props) {
 
    function onHandleSubmit(event) {
       event.preventDefault();
-      props.addSongToList(song);
+      addSongToList(song);
       setSong(formInputFields);
    }
 
+   const musicGenreList = [
+      "Genre",
+      "Pop Music",
+      "Hip Hop",
+      "Hard Rock",
+      "Elevator Music",
+      "Klantenservice Wachtrij Music",
+      "Apres Ski",
+      "Heavy Metal",
+      "Classical",
+      "Bossa Nova",
+   ];
+
    return (
-      // Let op: onSubmit hoeft alleen bij form en niet bij de individuele formInputFields
-      // To Do: Styling: breaks weghalen en netter maken met CSS
-      <div className="songform-component">
-         <h2 className="h2AlignCenter">Add your favorite songs:</h2>
+      <div>
+         <h2>Add your favorite songs:</h2>
          <div className="songform-container">
-            <form className="songform-wrapper" onSubmit={onHandleSubmit}>
+            <form onSubmit={onHandleSubmit}>
                <label className="songform-label">
                   <input
                      type="text"
@@ -47,16 +57,9 @@ function SongForm(props) {
                </label>
                <br />
                <select className="songform-label" name="genre" value={song.genre} onChange={onHandleChange}>
-                  <option value="">Genre</option>
-                  <option value="Pop Music">Pop Music</option>
-                  <option value="Hip Hop">Hip Hop</option>
-                  <option value="Hard Rock">Hard Rock</option>
-                  <option value="Elevator Music">Elevator Music</option>
-                  <option value="Klantenservice Wachtrij Music">Klantenservice Wachtrij Music</option>
-                  <option value="Apres Ski">Apres Ski</option>
-                  <option value="Heavy Metal">Heavy Metal</option>
-                  <option value="Classical">Classical</option>
-                  <option value="Bossa Nova">Bossa Nova</option>
+                  {musicGenreList.map((genreCategory) => (
+                     <option value={genreCategory}>{genreCategory}</option>
+                  ))}
                </select>
                <br />
                <select className="songform-label" name="rating" value={song.rating} onChange={onHandleChange}>

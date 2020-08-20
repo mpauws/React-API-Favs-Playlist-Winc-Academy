@@ -8,6 +8,7 @@ function SongOverview() {
    const [songs, setSongs] = useState(allSongsArray);
    const [sorting, setSorting] = useState("");
 
+   // Add Song
    const addSongToList = (item) => {
       item.id = songs.length + 1;
       if (item.songtitle === "") {
@@ -19,21 +20,18 @@ function SongOverview() {
       setSongs([...songs, item]);
    };
 
-   /*    const deleteSongFunctie = () => {
-      songs.map((data) => {
-         return data.id;
-      });
-   }; */
-
-   const deleteSongListItem = (songObject) => {
-      setSongs(songs.filter((remainingSongs) => remainingSongs.id !== songObject.id));
-      // deleteSongFunctie(songObject.key);
+   // Remove Song
+   const handleRemoveItem = (e) => {
+      const songItem = e.target.id;
+      setSongs(songs.filter((item) => item.id !== songItem));
    };
 
+   // Remove Songs
    const onChangeSort = (sortMethod) => {
       setSorting(sortMethod);
    };
 
+   // Sort Songs
    if (sorting === "songtitle-Z-A") {
       songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
    }
@@ -75,7 +73,7 @@ function SongOverview() {
                           artist={song.artist}
                           genre={song.genre}
                           rating={song.rating}
-                          deleteSongListItem={deleteSongListItem}
+                          handleRemoveItem={handleRemoveItem}
                        />
                     ))
                   : null}
