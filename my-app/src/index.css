@@ -1,14 +1,10 @@
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 /* FONTS */
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 @import url("https://fonts.googleapis.com/css?family=Monoton");
-@import url("https://fonts.googleapis.com/css?Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Mr + Dafoe");
 
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 /* GENERAL */
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 body {
    font-family: "Roboto", sans-serif;
@@ -99,9 +95,7 @@ p {
    line-height: 1.5em;
 }
 
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 /* NAVIGATION BAR */
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .nav-bar {
    display: flex;
@@ -118,9 +112,7 @@ p {
    border: 1px solid white;
 }
 
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 /* SONGFORM */
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .songform-container {
    margin-top: 10px;
@@ -159,39 +151,49 @@ p {
    background-color: rgb(221, 83, 150);
 }
 
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
-/* SORT OPTIONS COMPONENT */
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
+/* FILTER BUTTONS COMPONENT */
 
-.sort-options {
-   margin-bottom: 20px;
+.filter-button-container {
+   display: flex;
+   padding: 10px;
 }
 
-.sort-options-label {
-   display: block;
-   padding: 7px 0;
+.filter-button {
+   padding: 5px;
+   margin: 0 10px;
+   width: 100px;
+   color: white;
+   font-size: 13px;
+   font-weight: 300;
    text-align: center;
+   background-color: rgb(230, 104, 165);
+   cursor: pointer;
+   transition: 0.2s;
 }
 
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] */
-/* SONG TABLE */
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] */
+.filter-button:hover {
+   background-color: rgb(221, 83, 150);
+}
+
+/* SONG TABLE OVERVIEW */
 
 table {
    width: 100%;
    margin-bottom: 50px;
+   border-collapse: collapse;
+   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.table-row {
+tr {
+   border: 1px solid rgba(255, 255, 255, 0.3);
    width: 100vw;
    padding: 10px;
 }
 
 td {
-   padding: 15px;
-   width: 17vw;
+   padding: 10px 0 10px 15px;
    text-align: left;
-   font-size: 12px;
+   font-size: 13px;
    vertical-align: middle;
    font-weight: 300;
    line-height: 1.5em;
@@ -199,41 +201,48 @@ td {
    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 }
 
-tr {
-   border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.song-header-cell {
-   vertical-align: middle;
-}
-
-th {
-   background-color: rgba(255, 255, 255, 0.3);
-   width: 17vw;
+.table-header-song,
+.table-header-artist,
+.table-header-genre,
+.table-header-rating,
+.table-header-delete {
    padding: 20px 15px;
+   background-color: rgba(126, 193, 255, 0.418);
+   color: #fff;
    text-align: left;
    vertical-align: text-bottom;
    font-weight: 500;
-   font-size: 12px;
-   color: #fff;
+   font-size: 13px;
    text-transform: uppercase;
 }
 
-.sort-button {
-   float: right;
-   padding: 5px;
-   border: 1px solid white;
-   cursor: pointer;
+.table-body-song,
+.table-body-artist,
+.table-body-genre,
+.table-body-rating {
+   vertical-align: middle;
 }
 
-table {
-   border-collapse: collapse;
-   border: 1px solid rgba(255, 255, 255, 0.3);
+.table-header-song,
+.table-body-song {
+   width: 25vw;
 }
 
-.song-cell-delete {
+.table-header-genre,
+.table-body-genre,
+.table-header-rating,
+.table.body-rating {
+   width: 12vw;
+}
+
+.table-header-delete,
+.table-body-delete {
    width: 7vw;
    text-align: center;
+}
+
+tr:nth-child(even) {
+   background-color: rgba(247, 247, 247, 0.11);
 }
 
 img.sort-icon {
@@ -244,6 +253,7 @@ img.sort-icon {
 
 .delete-button {
    padding: 5px;
+   margin: 0 10px;
    width: 75px;
    color: white;
    background-color: rgb(230, 104, 165);
@@ -255,9 +265,7 @@ img.sort-icon {
    background-color: rgb(221, 83, 150);
 }
 
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 /* ABOUT PAGE */
-/* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .about-page {
    margin: 0 auto;

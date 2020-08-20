@@ -29,8 +29,7 @@ function SongForm({ addSongToList }) {
       "Pop Music",
       "Hip Hop",
       "Hard Rock",
-      "Elevator Music",
-      "Klantenservice Wachtrij Music",
+      "Elevator",
       "Apres Ski",
       "Heavy Metal",
       "Classical",
@@ -58,12 +57,16 @@ function SongForm({ addSongToList }) {
                <br />
                <select className="songform-label" name="genre" value={song.genre} onChange={onHandleChange}>
                   {musicGenreList.map((genreCategory) => (
-                     <option value={genreCategory}>{genreCategory}</option>
+                     <option key={genreCategory} value={genreCategory}>
+                        {genreCategory}
+                     </option>
                   ))}
                </select>
                <br />
                <select className="songform-label" name="rating" value={song.rating} onChange={onHandleChange}>
-                  <option value="">Rate</option>
+                  <option disabled selected value="">
+                     Rate
+                  </option>
                   <option value="1 star">1 star</option>
                   <option value="2 stars">2 stars</option>
                   <option value="3 stars">3 stars</option>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function SongListItem(props) {
+function SongListItem({ id, songtitle, artist, genre, rating, handleRemoveItem }) {
    const convertRatingToStars = (rating) => {
       let starRating = "";
 
@@ -23,13 +23,13 @@ function SongListItem(props) {
    };
 
    return (
-      <tr className="song-header" key={props.id}>
-         <td className="song-row-item">{props.songtitle}</td>
-         <td className="song-row-item">{props.artist}</td>
-         <td className="song-row-item">{props.genre}</td>
-         <td className="song-row-item">{convertRatingToStars(props.rating)}</td>
-         <td key={props.id} className="song-cell-delete">
-            <button id={props.id} className="delete-button" onClick={props.handleRemoveItem}>
+      <tr className="song-header" key={id}>
+         <td className="table-body-song">{songtitle}</td>
+         <td className="table-body-artist">{artist}</td>
+         <td className="table-body-genre">{genre}</td>
+         <td className="table-body-rating">{convertRatingToStars(rating)}</td>
+         <td key={id} className="table-body-delete">
+            <button id={id} className="delete-button" onClick={handleRemoveItem}>
                Delete
             </button>
          </td>

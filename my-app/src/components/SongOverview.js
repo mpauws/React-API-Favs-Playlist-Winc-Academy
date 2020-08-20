@@ -26,12 +26,11 @@ function SongOverview() {
       setSongs(songs.filter((item) => item.id !== songItem));
    };
 
-   // Remove Songs
+   // Sort Songs
    const onChangeSort = (sortMethod) => {
       setSorting(sortMethod);
    };
 
-   // Sort Songs
    if (sorting === "songtitle-Z-A") {
       songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
    }
@@ -67,7 +66,6 @@ function SongOverview() {
                {songs
                   ? songs.map((song) => (
                        <SongListItem
-                          key={song.id}
                           id={song.id}
                           songtitle={song.songtitle}
                           artist={song.artist}
