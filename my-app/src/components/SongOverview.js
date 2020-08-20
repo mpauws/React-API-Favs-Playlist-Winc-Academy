@@ -34,7 +34,7 @@ function SongOverview() {
       setSorting(sortMethod);
    };
 
-   switch (sorting) {
+   /*    switch (sorting) {
       case "songtitle-Z-A":
          songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
          break;
@@ -61,32 +61,32 @@ function SongOverview() {
          break;
       default:
          alert("Sort Fail");
-   }
+   } */
 
-   /*   if (sorting === "songtitle-Z-A") {
-    songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
-  }
-  if (sorting === "songtitle-A-Z") {
-    songs.sort((a, b) => (a.songtitle > b.songtitle ? 1 : -1));
-  }
-  if (sorting === "artist-A-Z") {
-    songs.sort((a, b) => (a.artist > b.artist ? 1 : -1));
-  }
-  if (sorting === "artist-Z-A") {
-    songs.sort((a, b) => (a.artist < b.artist ? 1 : -1));
-  }
-  if (sorting === "genre-A-Z") {
-    songs.sort((a, b) => (a.genre > b.genre ? 1 : -1));
-  }
-  if (sorting === "genre-Z-A") {
-    songs.sort((a, b) => (a.genre < b.genre ? 1 : -1));
-  }
-  if (sorting === "1star-5star") {
-    songs.sort((a, b) => (a.rating > b.rating ? 1 : -1));
-  }
-  if (sorting === "5star-1star") {
-    songs.sort((a, b) => (a.rating < b.rating ? 1 : -1));
-  } */
+   if (sorting === "songtitle-Z-A") {
+      songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
+   }
+   if (sorting === "songtitle-A-Z") {
+      songs.sort((a, b) => (a.songtitle > b.songtitle ? 1 : -1));
+   }
+   if (sorting === "artist-A-Z") {
+      songs.sort((a, b) => (a.artist > b.artist ? 1 : -1));
+   }
+   if (sorting === "artist-Z-A") {
+      songs.sort((a, b) => (a.artist < b.artist ? 1 : -1));
+   }
+   if (sorting === "genre-A-Z") {
+      songs.sort((a, b) => (a.genre > b.genre ? 1 : -1));
+   }
+   if (sorting === "genre-Z-A") {
+      songs.sort((a, b) => (a.genre < b.genre ? 1 : -1));
+   }
+   if (sorting === "1star-5star") {
+      songs.sort((a, b) => (a.rating > b.rating ? 1 : -1));
+   }
+   if (sorting === "5star-1star") {
+      songs.sort((a, b) => (a.rating < b.rating ? 1 : -1));
+   }
 
    return (
       <div>
