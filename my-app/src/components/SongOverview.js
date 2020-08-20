@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SongForm from "./SongForm";
 import SongOverviewHeader from "./SongOverviewHeader";
 import SongListItem from "./SongListItem";
-import allSongsArray from "./songs.js";
+import allSongsArray from "./raw-data/songs.js";
 
 function SongOverview() {
    const [songs, setSongs] = useState(allSongsArray);

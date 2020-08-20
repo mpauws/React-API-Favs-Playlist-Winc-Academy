@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import SongOverview from "./components/SongOverview";
-import About from "./About";
+import About from "./components/About";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -13,7 +13,6 @@ function App() {
             <Route exact path="/" component={SongOverview} />
             <Route path="/About" component={About} />
          </Switch>
-         
       </div>
    );
 }
