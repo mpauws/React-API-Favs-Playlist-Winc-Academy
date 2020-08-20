@@ -19,49 +19,20 @@ function SongOverview() {
       setSongs([...songs, item]);
    };
 
-   const deleteSongFunctie = () => {
+   /*    const deleteSongFunctie = () => {
       songs.map((data) => {
          return data.id;
       });
-   };
+   }; */
 
-   const deleteSongListItem = (song) => {
-      setSongs(songs.filter((remainingSongs) => remainingSongs !== song));
-      deleteSongFunctie(song.key);
+   const deleteSongListItem = (songObject) => {
+      setSongs(songs.filter((remainingSongs) => remainingSongs.id !== songObject.id));
+      // deleteSongFunctie(songObject.key);
    };
 
    const onChangeSort = (sortMethod) => {
       setSorting(sortMethod);
    };
-
-   /*    switch (sorting) {
-      case "songtitle-Z-A":
-         songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));
-         break;
-      case "songtitle-A-Z":
-         songs.sort((a, b) => (a.songtitle > b.songtitle ? 1 : -1));
-         break;
-      case "artist-A-Z":
-         songs.sort((a, b) => (a.artist > b.artist ? 1 : -1));
-         break;
-      case "artist-Z-A":
-         songs.sort((a, b) => (a.artist < b.artist ? 1 : -1));
-         break;
-      case "genre-A-Z":
-         songs.sort((a, b) => (a.genre > b.genre ? 1 : -1));
-         break;
-      case "genre-Z-A":
-         songs.sort((a, b) => (a.genre < b.genre ? 1 : -1));
-         break;
-      case "1star-5star":
-         songs.sort((a, b) => (a.rating > b.rating ? 1 : -1));
-         break;
-      case "5star-1star":
-         songs.sort((a, b) => (a.rating < b.rating ? 1 : -1));
-         break;
-      default:
-         alert("Sort Fail");
-   } */
 
    if (sorting === "songtitle-Z-A") {
       songs.sort((a, b) => (a.songtitle < b.songtitle ? 1 : -1));

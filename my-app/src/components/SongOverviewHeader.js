@@ -1,73 +1,39 @@
 import React from "react";
+import icondown from "./images/icons8-sort-down-64.png";
+import iconup from "./images/icons8-sort-up-64.png";
 
 function SongOverviewHeader(props) {
-  return (
-    <thead className="song-header">
-      <tr>
-        <th className="song-header-cell">
-          <span>Song</span>
-          <img
-            className="sort-icon"
-            onClick={() => props.onChangeSort("songtitle-Z-A")}
-            src={require("./images/icons8-sort-down-64.png")}
-            alt={"icon-down"}
-          />
-          <img
-            className="sort-icon"
-            src={require("./images/icons8-sort-up-64.png")}
-            alt={"icon-up"}
-            onClick={() => props.onChangeSort("songtitle-A-Z")}
-          />
-        </th>
-        <th className="song-header-cell">
-          Artist
-          <img
-            className="sort-icon"
-            src={require("./images/icons8-sort-down-64.png")}
-            alt={"icon-down"}
-            onClick={() => props.onChangeSort("artist-Z-A")}
-          />
-          <img
-            className="sort-icon"
-            src={require("./images/icons8-sort-up-64.png")}
-            alt={"icon-up"}
-            onClick={() => props.onChangeSort("artist-A-Z")}
-          />
-        </th>
-        <th className="song-header-cell">
-          Genre
-          <img
-            className="sort-icon"
-            src={require("./images/icons8-sort-down-64.png")}
-            alt={"icon-down"}
-            onClick={() => props.onChangeSort("genre-Z-A")}
-          />
-          <img
-            className="sort-icon"
-            src={require("./images/icons8-sort-up-64.png")}
-            alt={"icon-up"}
-            onClick={() => props.onChangeSort("genre-A-Z")}
-          />
-        </th>
-        <th className="song-header-cell">
-          Rating
-          <img
-            className="sort-icon"
-            src={require("./images/icons8-sort-down-64.png")}
-            alt={"icon-down"}
-            onClick={() => props.onChangeSort("1star-5star")}
-          />
-          <img
-            className="sort-icon"
-            src={require("./images/icons8-sort-up-64.png")}
-            alt={"icon-up"}
-            onClick={() => props.onChangeSort("5star-1star")}
-          />
-        </th>
-        <th className="song-cell-delete">Delete</th>
-      </tr>
-    </thead>
-  );
+   const tableHeaderAttributes = [
+      { columnName: "Song", sortAscending: "songtitle-A-Z", sortDescending: "songtitle-Z-A" },
+      { columnName: "Artist", sortAscending: "artist-A-Z", sortDescending: "artist-Z-A" },
+      { columnName: "Genre", sortAscending: "genre-A-Z", sortDescending: "genre-Z-A" },
+      { columnName: "Rating", sortAscending: "1star-5star", sortDescending: "5star-1star" },
+   ];
+
+   return (
+      <thead className="song-header">
+         <tr>
+            {tableHeaderAttributes.map((object) => (
+               <th className="song-header-cell">
+                  <span>{object.columnName}</span>
+                  <img
+                     className="sort-icon"
+                     onClick={() => props.onChangeSort(object.sortDescending)}
+                     src={icondown}
+                     alt={"icon-down"}
+                  />
+                  <img
+                     className="sort-icon"
+                     onClick={() => props.onChangeSort(object.sortAscending)}
+                     src={iconup}
+                     alt={"icon-up"}
+                  />
+               </th>
+            ))}
+            <th className="song-cell-delete">Delete</th>
+         </tr>
+      </thead>
+   );
 }
 
 export default SongOverviewHeader;

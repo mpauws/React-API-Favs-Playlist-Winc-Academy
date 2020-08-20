@@ -11,92 +11,92 @@
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 body {
-  font-family: "Roboto", sans-serif;
-  background: linear-gradient(rgb(89 126 177) 0%, rgb(80 161 169) 100%);
-  padding: 30px;
-  color: white;
-  min-height: 100vh;
+   font-family: "Roboto", sans-serif;
+   background: linear-gradient(rgb(89 126 177) 0%, rgb(80 161 169) 100%);
+   padding: 30px;
+   color: white;
+   min-height: 100vh;
 }
 
 h1 {
-  font-family: "Monoton", cursive;
-  padding-bottom: 10px;
-  text-align: center;
-  font-size: 100px;
-  line-height: 0.9em;
-  font-weight: lighter;
-  margin: 30px;
-  display: block;
-  position: relative;
-  background: linear-gradient(
-    #022486 0%,
-    #0ab1d6 30%,
-    #93c9c9 40%,
-    #d8ffff 45%,
-    #00081c 45%,
-    #00081c 50%,
-    #074a67 52%,
-    #1cd8fe 60%,
-    #7fedfe 62%,
-    #96f5fc 70%,
-    #0fd8fa 73%,
-    #0bd2fd 88%,
-    #affdff 100%
-  );
-  background-blend-mode: multiply;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px rgb(184, 255, 251);
+   font-family: "Monoton", cursive;
+   padding-bottom: 10px;
+   text-align: center;
+   font-size: 100px;
+   line-height: 0.9em;
+   font-weight: lighter;
+   margin: 30px;
+   display: block;
+   position: relative;
+   background: linear-gradient(
+      #022486 0%,
+      #0ab1d6 30%,
+      #93c9c9 40%,
+      #d8ffff 45%,
+      #00081c 45%,
+      #00081c 50%,
+      #074a67 52%,
+      #1cd8fe 60%,
+      #7fedfe 62%,
+      #96f5fc 70%,
+      #0fd8fa 73%,
+      #0bd2fd 88%,
+      #affdff 100%
+   );
+   background-blend-mode: multiply;
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   -webkit-text-stroke: 1px rgb(184, 255, 251);
 }
 
 h2 {
-  font-family: "Mr Dafoe", cursive;
-  font-size: 2.5em;
-  text-align: center;
-  color: #eb219b;
-  font-weight: 300;
-  -webkit-text-fill-color: rgb(255, 157, 253);
-  filter: drop-shadow(10px 10px 10px #441f62);
-  -webkit-filter: drop-shadow(1px 2px 0 #441f62);
-  transform: skew(-5deg, -5deg);
-  -webkit-transform: skew(-5deg, -5deg);
-  font-weight: normal;
-  z-index: 2;
+   font-family: "Mr Dafoe", cursive;
+   font-size: 2.5em;
+   text-align: center;
+   color: #eb219b;
+   font-weight: 300;
+   -webkit-text-fill-color: rgb(255, 157, 253);
+   filter: drop-shadow(10px 10px 10px #441f62);
+   -webkit-filter: drop-shadow(1px 2px 0 #441f62);
+   transform: skew(-5deg, -5deg);
+   -webkit-transform: skew(-5deg, -5deg);
+   font-weight: normal;
+   z-index: 2;
 }
 
 input[type="text"] {
-  width: 200px;
-  height: 30px;
-  padding: 0;
-  margin: 0;
-  border: 0;
+   width: 200px;
+   height: 30px;
+   padding: 0;
+   margin: 0;
+   border: 0;
 }
 
 input[placeholder] {
-  text-align: center;
+   text-align: center;
 }
 
 select {
-  border: 0;
-  text-align-last: center;
+   border: 0;
+   text-align-last: center;
 }
 
 label {
-  font-size: 14px;
+   font-size: 14px;
 }
 
 button {
-  border: 0;
+   border: 0;
 }
 
 a {
-  color: white;
+   color: white;
 }
 
 p {
-  font-weight: 300;
-  line-height: 1.5em;
+   font-weight: 300;
+   line-height: 1.5em;
 }
 
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
@@ -104,18 +104,18 @@ p {
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .nav-bar {
-  display: flex;
-  justify-content: center;
+   display: flex;
+   justify-content: center;
 }
 
 .nav-bar-item {
-  padding: 10px 20px;
-  text-decoration: none;
-  font-weight: 100;
+   padding: 10px 20px;
+   text-decoration: none;
+   font-weight: 100;
 }
 
 .active {
-  border: 1px solid white;
+   border: 1px solid white;
 }
 
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
@@ -123,40 +123,40 @@ p {
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .songform-container {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  padding-bottom: 30px;
+   margin-top: 10px;
+   display: flex;
+   justify-content: center;
+   justify-items: center;
+   padding-bottom: 30px;
 }
 
 .songform-label {
-  display: block;
-  height: 30px;
-  width: 200px;
-  text-align: center;
-  color: rgba(98, 98, 98, 0.781);
+   display: block;
+   height: 30px;
+   width: 200px;
+   text-align: center;
+   color: rgba(98, 98, 98, 0.781);
 }
 
 .select-menu {
-  height: 30px;
-  width: 200px;
-  color: rgba(98, 98, 98, 0.781);
-  margin: 0 auto;
-  display: flex;
+   height: 30px;
+   width: 200px;
+   color: rgba(98, 98, 98, 0.781);
+   margin: 0 auto;
+   display: flex;
 }
 
 .add-button {
-  padding: 10px;
-  width: 200px;
-  color: white;
-  background-color: rgb(230, 104, 165);
-  cursor: pointer;
-  transition: 0.2s;
+   padding: 10px;
+   width: 200px;
+   color: white;
+   background-color: rgb(230, 104, 165);
+   cursor: pointer;
+   transition: 0.2s;
 }
 
 .add-button:hover {
-  background-color: rgb(221, 83, 150);
+   background-color: rgb(221, 83, 150);
 }
 
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
@@ -164,13 +164,13 @@ p {
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .sort-options {
-  margin-bottom: 20px;
+   margin-bottom: 20px;
 }
 
 .sort-options-label {
-  display: block;
-  padding: 7px 0;
-  text-align: center;
+   display: block;
+   padding: 7px 0;
+   text-align: center;
 }
 
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] */
@@ -178,68 +178,68 @@ p {
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] */
 
 table {
-  width: 100%;
-  margin-bottom: 50px;
+   width: 100%;
+   margin-bottom: 50px;
 }
 
 .table-row {
-  width: 100vw;
-  padding: 10px;
+   width: 100vw;
+   padding: 10px;
 }
 
 td {
-  padding: 15px;
-  width: 17vw;
-  text-align: left;
-  font-size: 12px;
-  vertical-align: middle;
-  font-weight: 300;
-  line-height: 1.5em;
-  color: #fff;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+   padding: 15px;
+   width: 17vw;
+   text-align: left;
+   font-size: 12px;
+   vertical-align: middle;
+   font-weight: 300;
+   line-height: 1.5em;
+   color: #fff;
+   border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 }
 
 tr {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .song-header-cell {
-  vertical-align: middle;
+   vertical-align: middle;
 }
 
 th {
-  background-color: rgba(255, 255, 255, 0.3);
-  width: 17vw;
-  padding: 20px 15px;
-  text-align: left;
-  vertical-align: text-bottom;
-  font-weight: 500;
-  font-size: 12px;
-  color: #fff;
-  text-transform: uppercase;
+   background-color: rgba(255, 255, 255, 0.3);
+   width: 17vw;
+   padding: 20px 15px;
+   text-align: left;
+   vertical-align: text-bottom;
+   font-weight: 500;
+   font-size: 12px;
+   color: #fff;
+   text-transform: uppercase;
 }
 
 .sort-button {
-  float: right;
-  padding: 5px;
-  border: 1px solid white;
-  cursor: pointer;
+   float: right;
+   padding: 5px;
+   border: 1px solid white;
+   cursor: pointer;
 }
 
 table {
-  border-collapse: collapse;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+   border-collapse: collapse;
+   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .song-cell-delete {
-  width: 7vw;
-  text-align: center;
+   width: 7vw;
+   text-align: center;
 }
 
 img.sort-icon {
-  cursor: pointer;
-  float: right;
-  width: 20px;
+   cursor: pointer;
+   float: right;
+   width: 20px;
 }
 
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
@@ -247,24 +247,21 @@ img.sort-icon {
 /* [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[ */
 
 .about-page {
-  margin: 0 auto;
-  width: 75%;
-  top: -200px;
-  bottom: -400px;
-  left: -400px;
-  right: -400px;
-  position: absolute;
-  background-image: linear-gradient(#ff0092 1px, transparent 1px),
-    linear-gradient(90deg, #ff0092 1px, transparent 1px);
-  background-size: 3% 3%, 3% 3%;
-  background-position: 0 0, 0 0;
-  transform: perspective(400px) rotateX(85deg);
+   margin: 0 auto;
+   width: 75%;
+   top: -200px;
+   bottom: -400px;
+   left: -400px;
+   right: -400px;
+   position: absolute;
+   background-image: linear-gradient(#ff0092 1px, transparent 1px), linear-gradient(90deg, #ff0092 1px, transparent 1px);
+   background-size: 3% 3%, 3% 3%;
+   background-position: 0 0, 0 0;
+   transform: perspective(400px) rotateX(85deg);
 }
 
 .about-page-text {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  width: 75%;
-  text-align: center;
+   margin: 0 auto;
+   width: 75%;
+   text-align: center;
 }
